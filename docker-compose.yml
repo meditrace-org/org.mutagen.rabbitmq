@@ -1,12 +1,20 @@
 version: "3.9"
+
+volumes:
+  rabbitmq_data:
+    external: false
+
 services:
   rabbitmq:
     image: rabbitmq:3.11-management-alpine
     hostname: rabbitmq
-    restart: always
+    restart: unless-stopped
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648
     ports:
       - 15672:15672
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - ./definitions.json:/etc/rabbitmq/definitions.json

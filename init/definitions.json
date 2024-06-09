@@ -40,6 +40,20 @@
             "configure": ".*",
             "write": ".*",
             "read": ".*"
+        },
+        {
+            "user": "backend",
+            "vhost": "/",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        },
+        {
+            "user": "processing",
+            "vhost": "/",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
         }
     ],
     "topic_permissions": [],

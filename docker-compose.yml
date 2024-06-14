@@ -13,7 +13,7 @@ services:
       - "15672:15672"
       - "5672:5672"
     volumes:
-      - ./rabbitmq_data:/var/lib/rabbitmq
+      - ./data:/var/lib/rabbitmq
       - ./init/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
       - ./init/definitions.json:/etc/rabbitmq/definitions.json:ro
     networks:

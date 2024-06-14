@@ -81,9 +81,23 @@
             "arguments": {}
         },
         {
-            "name": "data_queue",
+            "name": "video_emb",
             "vhost": "/",
-            "durable": true,
+            "durable": false,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "audio_emb",
+            "vhost": "/",
+            "durable": false,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "face_emb",
+            "vhost": "/",
+            "durable": false,
             "auto_delete": false,
             "arguments": {}
         }

@@ -10,10 +10,10 @@ services:
       - RABBITMQ_DEFAULT_PASS=admin
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648
     ports:
-      - "15672:15672"
-      - "5672:5672"
+      - "${MQ_HTTP_PORT:-15672}:${MQ_HTTP_PORT:-15672}"
+      - "${MQ_PORT:-5672}:${MQ_PORT:-5672}"
     volumes:
-      - ./rabbitmq_data:/var/lib/rabbitmq
+      - ./data:/var/lib/rabbitmq
       - ./init/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
       - ./init/definitions.json:/etc/rabbitmq/definitions.json:ro
     networks:

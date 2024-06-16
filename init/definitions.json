@@ -35,14 +35,14 @@
     ],
     "permissions": [
         {
-            "user": "admin",
+            "user": "backend",
             "vhost": "/",
             "configure": ".*",
             "write": ".*",
             "read": ".*"
         },
         {
-            "user": "backend",
+            "user": "admin",
             "vhost": "/",
             "configure": ".*",
             "write": ".*",
@@ -81,9 +81,23 @@
             "arguments": {}
         },
         {
-            "name": "data_queue",
+            "name": "face_emb",
             "vhost": "/",
-            "durable": true,
+            "durable": false,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "video_emb",
+            "vhost": "/",
+            "durable": false,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "audio_emb",
+            "vhost": "/",
+            "durable": false,
             "auto_delete": false,
             "arguments": {}
         }
